@@ -12,7 +12,13 @@ function getSiteData(){
           siteData = JSON.parse(localStorage.siteData)
     }
     else{
-        siteData = {};
+        siteData = {
+            "students": [],
+            "assignments":[],
+            "selectedStudentName": "",
+            "alreadySelected" : [],
+            "studentProgress": []
+        };
     }
   
     return siteData;
