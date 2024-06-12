@@ -8,11 +8,12 @@ const previosulySelectedStudentsTable = document.getElementById("previosulySelec
 window.onload = () => {
     populateAvailableStudents();
     populatePreviosulySelected();
+    populateCurrentlySelected();
 }
 
+let siteData = getSiteData();
 
 function populateAvailableStudents() {
-    let siteData = getSiteData();
     console.log(siteData)
     let availableStudents = [];
 
@@ -21,7 +22,6 @@ function populateAvailableStudents() {
         if (!siteData.alreadySelected.includes(studentName) && !siteData.selectedStudentName.includes(studentName)) {
             availableStudents.push(studentName);
         }
-        //   console.log(availableStudents)
     }
     for (let studentName of availableStudents) {
         let option = document.createElement("option");
@@ -31,62 +31,53 @@ function populateAvailableStudents() {
     }
 }
 
-function populatePreviosulySelected() {
-    let siteData = getSiteData();
+function createTable(data) {
     const table = document.createElement("table");
-    table.id = "previousStudentTable";
     table.className = "table table-striped table-hover border";
+
     const thead = document.createElement("thead");
     thead.className = "table-dark";
-    const tbody = document.createElement("tbody");
-    tbody.className = "table-group-divider";
-
     const headerRow = document.createElement("tr");
     ["Name"].forEach(text => {
         const header = document.createElement("th");
         header.textContent = text;
         headerRow.appendChild(header);
-    })
+    });
     thead.appendChild(headerRow);
+
     table.appendChild(thead);
-    siteData.alreadySelected.forEach(student => {
+    
+    return table;
+}
+
+function populatePreviosulySelected() {
+    const data = siteData.alreadySelected.map(student => [student]);
+    const table = createTable(data);
+    const tbody = document.createElement("tbody");
+    data.forEach(rowData => {
         const row = document.createElement("tr");
-        row.appendChild(createCell(student))
-    tbody.appendChild(row);
-    })
+        rowData.forEach(cellData => {
+            const cell = document.createElement("td");
+            cell.textContent = cellData;
+            row.appendChild(cell);
+        });
+        tbody.appendChild(row);
+    });
+    tbody.className = "table-group-divider";
     table.appendChild(tbody);
+
     previosulySelectedStudentsTable.appendChild(table);
 }
 
-function createCell(value){
-    const cell = document.createElement("td");
-    cell.textContent = value;
-    return cell;
-}
-
-function populateCurrentlySelected(){
-    let siteData = getSiteData();
-    const table = document.createElement("table");
-    table.id = "previousStudentTable";
-    table.className = "table table-striped table-hover border";
-    const thead = document.createElement("thead");
-    thead.className = "table-dark";
+function populateCurrentlySelected() {
+    const data = siteData.selectedStudentName;
+    const table = createTable(data);
     const tbody = document.createElement("tbody");
-    tbody.className = "table-group-divider";
-
-    const headerRow = document.createElement("tr");
-    ["Name"].forEach(text => {
-        const header = document.createElement("th");
-        header.textContent = text;
-        headerRow.appendChild(header);
-    })
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-    siteData.selectedStudentName.forEach(student => {
-        const row = document.createElement("tr");
-        row.appendChild(createCell(student))
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.textContent = siteData.selectedStudentName;
+    row.appendChild(cell);
     tbody.appendChild(row);
-    })
     table.appendChild(tbody);
-    
+    currentlySelectedStudentsTable.appendChild(table);
 }
