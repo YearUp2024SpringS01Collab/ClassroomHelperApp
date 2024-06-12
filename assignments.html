@@ -64,57 +64,19 @@
                                 <td> <p class = "h4">Assignments</p></td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="assignmentsOutputTable">
                         
                             <tr>
 
                                 <td>
                                     <div class="card">
                                         <div class="card-body d-flex">
-                                            <!--TODO: Have the X mark near the end of the container, away from the words-->
                                             Workbook1 EX1
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            Workbook1 EX2
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            Workbook2 EX1
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            Workbook2 EX2
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!--For each entry, this entire block would probably have to be made programatically-->
-                            <tr>
-                                <td>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            Workbook2 EX3
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!---->
+                           
                         </tbody>
                     </table>
 
@@ -169,7 +131,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button id="modalSaveChangesButton" type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -188,6 +150,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="scripts/site.js"></script>
     <script src="scripts/assignments.js"></script>
 </body>
 
