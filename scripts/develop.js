@@ -2,7 +2,6 @@
 
 window.onload = () => {
     displayLatestSiteData();
-
     const loadDataExample1Button = document.getElementById("loadDataExample1Button");
     loadDataExample1Button.onclick = onLoadDataExample1ButtonClick;
 
@@ -36,8 +35,7 @@ function onStudentsListLoadButtonClick(){
     const studentsList = document.getElementById("studentsList");
     studentsList.innerHTML = "";
 
-    let siteData = getSiteData();
-
+        let siteData = getSiteData();
     for(let student of siteData.students){
         //studentsList.appendChild(new Option(student.studentName, student.studentName));
 

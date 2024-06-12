@@ -2,10 +2,6 @@
 
 
 
-
-
-
-
 function getSiteData(){
     let siteData;
     if(localStorage.siteData){
