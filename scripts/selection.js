@@ -63,3 +63,30 @@ function createCell(value){
     cell.textContent = value;
     return cell;
 }
+
+function populateCurrentlySelected(){
+    let siteData = getSiteData();
+    const table = document.createElement("table");
+    table.id = "previousStudentTable";
+    table.className = "table table-striped table-hover border";
+    const thead = document.createElement("thead");
+    thead.className = "table-dark";
+    const tbody = document.createElement("tbody");
+    tbody.className = "table-group-divider";
+
+    const headerRow = document.createElement("tr");
+    ["Name"].forEach(text => {
+        const header = document.createElement("th");
+        header.textContent = text;
+        headerRow.appendChild(header);
+    })
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    siteData.selectedStudentName.forEach(student => {
+        const row = document.createElement("tr");
+        row.appendChild(createCell(student))
+    tbody.appendChild(row);
+    })
+    table.appendChild(tbody);
+    
+}
