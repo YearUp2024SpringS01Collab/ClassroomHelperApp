@@ -14,21 +14,16 @@ window.onload = () => {
 let siteData = getSiteData();
 
 function populateAvailableStudents() {
-    console.log(siteData)
-    let availableStudents = [];
 
-    for (let student of siteData.students) {
-        let studentName = student.studentName;
-        if (!siteData.alreadySelected.includes(studentName) && !siteData.selectedStudentName.includes(studentName)) {
-            availableStudents.push(studentName);
-        }
-    }
+    let availableStudents = getStudentsAvailableForSelection();
+    
     for (let studentName of availableStudents) {
         let option = document.createElement("option");
         option.textContent = studentName;
         option.value = studentName;
         availablestudentsdropdown.appendChild(option);
     }
+    
 }
 
 function createTable(data) {

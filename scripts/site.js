@@ -1,8 +1,43 @@
 "use strict";
 
 
+
+
+
+function getStudentsAvailableForSelection(){
+    let availableStudents = [];
+
+    let siteData = getSiteData();
+
+    for (let student of siteData.students) {
+        let studentName = student.studentName;
+        if (!siteData.alreadySelected.includes(studentName) && !siteData.selectedStudentName.includes(studentName)) {
+            availableStudents.push(studentName);
+        }
+    }
+
+    return availableStudents;
+}
+
 function selectStudent(studentName){
-    
+
+    //saftey!  make sure the studentName is actually a student by confirming in the students array;
+
+    //move selected student (if any) into alreadyselected array
+    //set new studentName as currently selected student
+}
+
+function addStudentProgress(studentName, assignmentName){
+
+}
+
+function removeStudentProgress(studentName, assignmentName){
+
+}
+
+function getStudentProgress(studentName, assignmentName){
+    //return either true if they HAVE completed the assignment
+    //or a FALSE if they HAVE NOT
 }
 
 
