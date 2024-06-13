@@ -19,13 +19,32 @@ window.onload = function () {
   //   console.log(siteData);
   populateStudentOptions(siteData); //populate the dropdown
 
-  document
-    .getElementById("view-options")
-    .addEventListener("change", function () {
-      const selectedName = this.value;
-      displayStudentInfo(siteData, selectedName);
-    });
-};
+
+  document.getElementById("view-options").addEventListener("change", function () {
+    const selectedName = this.value;
+    displayStudentInfo(siteData, selectedName);
+  });
+  document.getElementById("add-single-student").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const studentName = document.getElementById("add-student-name").value;
+    const studentEmail = document.getElementById("add-student-email").value;
+    addStudent(studentName, studentEmail);
+    populateStudentOptions(getSiteData());
+    displayAllStudents(getSiteData());
+  });
+};ntOptions(getSiteData()); 
+  displayAllStudents(getSiteData());
+
+});
+  
+  
+//   document
+//     .getElementById("view-options")
+//     .addEventListener("change", function () {
+//       const selectedName = this.value;
+//       displayStudentInfo(siteData, selectedName);
+//     });
+// };
 
 function populateStudentOptions(siteData) {
   const students = siteData.students;
@@ -132,6 +151,40 @@ function displayStudentInfo(siteData, selectedName) {
       studentList.appendChild(row);
     }
   }
+}
+document.addEventListener('DOMContentLoaded', function () {
+  loadDataExample1(); // Load initial data 
+
+  // Event listener for adding a student
+  document.getElementById('add-single-student').addEventListener('submit', function (event) {
+      event.preventDefault();
+      
+      // Get form values
+      let studentName = document.getElementById('student-name').value.trim();
+      let studentEmail = document.getElementById('student-email').value.trim();
+
+      // Call function 
+      addStudent(studentName, studentEmail);
+
+      // Clear form  
+      document.getElementById('add-single-student').reset();
+  });
+
+
+
+
+// Function to add a student
+function addStudent(studentName, studentEmail) {
+  let siteData = getSiteData();
+
+  // Check if student already exists
+  for (let existingStudent of siteData.students) {
+      if (existingStudent.studentName === studentName) {
+          console.log("Student already exists.");
+          return;
+      }
+  }
+  
 }
 
 // function to remove to students from local storage

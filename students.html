@@ -1,141 +1,136 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Students</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link href="css/site.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="css/site.css" rel="stylesheet">
+</head>
 
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <main>
-            <h1 class="display-2 text-center">Student list</h1>
-            <!-- section -->
-            <div class="student-actions mt-5 py-5 text-center w-auto">
-                <select name="" id="view-options">
-                    <option selected>Select one</option>
-                    <option id="viewall">View All</option>
-                    <option value="" id="viewone">View one</option>
-
-                </select>
-                <button id="add-student-btn" class="btn btn-primary ms-2">Add Student</button>
-            </div>
-            <!-- table with student information -->
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <table class="table table-striped mt-5">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Student Name</th>
-                                    <th>Email</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <!-- body -->
-                            <tbody id="student-List">
-                                <tr>
-                                    <td>Alice Johnson</td>
-                                    <td>alice.johnson@example.com</td>
-                                    <td><button>X</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Brian Smith</td>
-                                    <td>brian.smith@example.com</td>
-                                    <td><button>X</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Caroline Davis</td>
-                                    <td>caroline.davis@example.org</td>
-                                    <td><button>X</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Daniel Brown</td>
-                                    <td>daniel.brown@example.net</td>
-                                    <td><button>X</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Emily Clark</td>
-                                    <td>emily.clark@example.edu</td>
-                                    <td><button>X</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="display-2 text-center">Student list</h1>
+        <!-- section -->
+        <div class="student-actions mt-5 py-5 text-center w-auto">
+            <select id="view-options">
+                <option selected>Select one</option>
+            </select>
+            <button id="add-student-btn" class="btn btn-primary ms-2">Add Student</button>
+        </div>
+        <!-- table with student information -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped mt-5">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <!-- body -->
+                        <tbody id="student-List">
+                            <!-- <tr>
+                                <td>Alice Johnson</td>
+                                <td>alice.johnson@example.com</td>
+                                <td><button class="btn btn-danger">X</button></td>
+                            </tr>
+                            <tr>
+                                <td>Brian Smith</td>
+                                <td>brian.smith@example.com</td>
+                                <td><button class="btn btn-danger">X</button></td>
+                            </tr>
+                            <tr>
+                                <td>Caroline Davis</td>
+                                <td>caroline.davis@example.org</td>
+                                <td><button class="btn btn-danger">X</button></td>
+                            </tr>
+                            <tr>
+                                <td>Daniel Brown</td>
+                                <td>daniel.brown@example.net</td>
+                                <td><button class="btn btn-danger">X</button></td>
+                            </tr>
+                            <tr>
+                                <td>Emily Clark</td>
+                                <td>emily.clark@example.edu</td>
+                                <td><button class="btn btn-danger">X</button></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Once the user selects add student form-popup -->
+        <div class="container">
+            <div class="row">
+                <div class="col mt-3">
+                    <div class="addStudentModal">
+                        <h2>Add Student</h2>
+                        <form id="add-single-student">
+                            <label for="add-student-name"> Name: </label>
+                            <input id="add-student-name" type="text" placeholder="Enter name" required>
+                            <label for="add-student-email">Email: </label>
+                            <input id="add-student-email" type="text" required placeholder="Enter email">
+                            <button type="submit">Add</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <!-- Once the user select add student--- form-popup -->
-            <div class="container">
-                <div class="row">
-                    <div class="col mt-3">
-                        <div class="addStudentModal">
-                            <h2>Add Student</h2>
-                            <form action="" id="add-single-student">
-                                <label for="student-Name"> Name: </label>
-                                <input type="text" placeholder="Enter-name" required>
-                                <label for="student-email">Email: </label>
-                                <input type="text" required placeholder="enter-email">
-                                <button>Add</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+        </div>
+    </main>
 
-        <footer>
+    <footer>
 
-        </footer>
+    </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-
-        <script src="scripts/site.js"></script>
-
-        <script src="scripts/students.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="scripts/site.js"></script>
+    <script src="scripts/students.js"></script>
+</body>
 
 </html>
