@@ -66,7 +66,6 @@ function getStudentProgress(studentName, assignmentName) {
   //or a FALSE if they HAVE NOT
 }
 
-
 function addStudent(studentName, studentEmail) {
   let siteData = getSiteData();
 
@@ -79,7 +78,6 @@ function addStudent(studentName, studentEmail) {
   setSiteData(siteData);
   console.log("sucessfully added");
 }
-
 
 function deleteStudent(studentName) { }
 
