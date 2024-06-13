@@ -33,7 +33,7 @@ function addStudentProgress(studentName, assignmentName) {
     if (student.studentName == studentName) {
       for (let assignment of student.siteData.assignments) {
         if (assignment.assignmentName == assignmentName) {
-          for (let record of siteData.studentProgress) { 
+          for (let record of siteData.studentProgress) {
             if (
               record.studentName == studentName &&
               record.assignment == assignmentName
@@ -48,28 +48,32 @@ function addStudentProgress(studentName, assignmentName) {
 }
 
 function removeStudentProgress(studentName, assignmentName) {
-    let siteData = siteData();
+  let siteData = siteData();
 
-    for (let student of siteData.students) {
-        if (student.studentName == studentName) {
-            for (let assignment of siteData.assignments) {
-                if (assignment == assignmentName) {
-                    siteData.studentProgress = site
-                }
+  for (let student of siteData.students) {
+    if (student.studentName == studentName) {
+      for (let assignment of siteData.assignments) {
+        if (assignment == assignmentName) {
+          siteData.studentProgress = site
+        }
+      }
+
+  
+    }
+  }
 }
-
 function getStudentProgress(studentName, assignmentName) {
   //return either true if they HAVE completed the assignment
   //or a FALSE if they HAVE NOT
 }
 
-function addStudent(studentName, studentEmail) {}
+function addStudent(studentName, studentEmail) { }
 
-function deleteStudent(studentName) {}
+function deleteStudent(studentName) { }
 
-function addAssignment(assignment) {}
+function addAssignment(assignment) { }
 
-function deleteAssignment(assignment) {}
+function deleteAssignment(assignment) { }
 
 function getSiteData() {
   let siteData;
