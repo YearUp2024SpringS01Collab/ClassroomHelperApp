@@ -1,10 +1,27 @@
 "use strict";
 
 
+function selectStudent(studentName){
+    
+}
 
 
 
+function addStudent(studentName, studentEmail){
 
+}
+
+function deleteStudent(studentName){
+
+}
+
+function addAssignment(assignment){
+
+}
+
+function deleteAssignment(assignment){
+
+}
 
 function getSiteData(){
     let siteData;
