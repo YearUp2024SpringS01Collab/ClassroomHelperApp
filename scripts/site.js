@@ -28,7 +28,7 @@ function setSiteData(siteData){
     localStorage.siteData = JSON.stringify(siteData);
 }
 
-function loadDataExample1(){
+    function loadDataExample1(){
     let dataExample1 = {
         "students": [
             {
