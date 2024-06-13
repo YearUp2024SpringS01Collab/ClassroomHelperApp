@@ -63,7 +63,19 @@ function getStudentProgress(studentName, assignmentName) {
   //or a FALSE if they HAVE NOT
 }
 
-function addStudent(studentName, studentEmail) {}
+function addStudent(studentName, studentEmail) {
+
+    let siteData = getSiteData ();
+
+    let newStudent = {
+        studentName:studentName,studentEmail:studentEmail
+    };
+
+    siteData.student.push(newStudent);
+    setSiteData(siteData);
+    console.log("sucessfully added");
+    
+}
 
 function deleteStudent(studentName) {}
 
