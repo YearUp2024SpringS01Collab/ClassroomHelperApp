@@ -16,7 +16,11 @@ window.onload = () => {
     populateAvailableStudents();
     populatePreviosulySelected();
     populateCurrentlySelected();
+    pickSelectedStudentBtn.onclick = pickSelectedStudent;
+    pickRandomStudentBtn.onclick = pickRandomStudent;
+
     }
+
 resetBtn.onclick = resetData;
 
 let siteData = getSiteData();
@@ -37,6 +41,7 @@ function resetData(){
    populateAvailableStudents();
 }
 
+//creates the options for availble student list,
 function populateAvailableStudents() {
 
     let availableStudents = getStudentsAvailableForSelection();
@@ -49,6 +54,7 @@ function populateAvailableStudents() {
     }
 }
 
+//this creates function is specificaly made to create tables, it a table making template.
 function createTable(data) {
     const table = document.createElement("table");
     table.className = "table table-striped table-hover border";
@@ -68,6 +74,7 @@ function createTable(data) {
     return table;
 }
 
+//creates table with data of preveiosuly selected students 
 function populatePreviosulySelected() {
     const data = siteData.alreadySelected.map(student => [student]);
     const table = createTable(data);
@@ -88,6 +95,7 @@ function populatePreviosulySelected() {
     previosulySelectedStudentsTable.appendChild(table);
 }
 
+//creates table with data of currently selected students.
 function populateCurrentlySelected() {
     const data = siteData.selectedStudentName;
     const table = createTable(data);
@@ -96,8 +104,35 @@ function populateCurrentlySelected() {
     const row = document.createElement("tr");
     const cell = document.createElement("td");
     cell.textContent = siteData.selectedStudentName;
+    // const removeCell = document.createElement("td");
+    // const removeButton = document.createElement("button");
+    // removeButton.innerHTML = "X";
+    // removeButton.classList.add("btn", "btn-danger")
+    // removeCell.appendChild(removeButton);
     row.appendChild(cell);
     tbody.appendChild(row);
     table.appendChild(tbody);
     currentlySelectedStudentsTable.appendChild(table);
+}
+
+function pickSelectedStudent(){
+    const availablestudentsdropdown = document.getElementById('availableStudentsList');
+    const selectedStudent = availablestudentsdropdown.value;
+    if(selectedStudent && !siteData.selectedStudentName.includes(selectedStudent)){
+        siteData.selectedStudentName.push(selectedStudent);
+        setSiteData(siteData);//save changes to local storage.
+        populateCurrentlySelected()
+        
+    }
+}
+
+function pickRandomStudent(){
+    const availableStudents = getStudentsAvailableForSelection();
+    const randomIndex = Math.floor(Math.random() * availableStudents.length);
+    const selectedStudent = availableStudents[randomIndex];
+    if(selectedStudent && !siteData.selectedStudentName.includes(selectedStudent)){
+        siteData.selectedStudentName.push(selectedStudent);
+        setSiteData(siteData);
+        populateCurrentlySelected();
+    }
 }
