@@ -33,7 +33,7 @@ function addStudentProgress(studentName, assignmentName) {
     if (student.studentName == studentName) {
       for (let assignment of student.siteData.assignments) {
         if (assignment.assignmentName == assignmentName) {
-          for (let record of siteData.studentProgress) { 
+          for (let record of siteData.studentProgress) {
             if (
               record.studentName == studentName &&
               record.assignment == assignmentName
@@ -48,14 +48,17 @@ function addStudentProgress(studentName, assignmentName) {
 }
 
 function removeStudentProgress(studentName, assignmentName) {
-    let siteData = siteData();
+  let siteData = siteData();
 
-    for (let student of siteData.students) {
-        if (student.studentName == studentName) {
-            for (let assignment of siteData.assignments) {
-                if (assignment == assignmentName) {
-                    siteData.studentProgress = site
-                }
+  for (let student of siteData.students) {
+    if (student.studentName == studentName) {
+      for (let assignment of siteData.assignments) {
+        if (assignment == assignmentName) {
+          siteData.studentProgress = site;
+        }
+      }
+    }
+  }
 }
 
 function getStudentProgress(studentName, assignmentName) {
@@ -63,7 +66,18 @@ function getStudentProgress(studentName, assignmentName) {
   //or a FALSE if they HAVE NOT
 }
 
-function addStudent(studentName, studentEmail) {}
+function addStudent(studentName, studentEmail) {
+  let siteData = getSiteData();
+
+  let newStudent = {
+    studentName: studentName,
+    studentEmail: studentEmail,
+  };
+
+  siteData.student.push(newStudent);
+  setSiteData(siteData);
+  console.log("sucessfully added");
+}
 
 function deleteStudent(studentName) {}
 
